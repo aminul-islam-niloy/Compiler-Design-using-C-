@@ -1,0 +1,8 @@
+Md. Tareq Zaman, Part-3, 2011
+Number of words is = 5
+Number of letter is = 16
+Number of digit is = 5
+Number of other Characters is = 8
+All Characters: MdTareqZamanPart
+All digit: 32011
+All other characters: .  , -, Àù¿á

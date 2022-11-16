@@ -1,0 +1,4 @@
+Number of Word is : 5
+Number of Letter is : 16
+Number of Digit is : 4
+Number of Other Character is : 5
