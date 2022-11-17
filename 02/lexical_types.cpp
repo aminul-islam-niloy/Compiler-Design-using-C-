@@ -3,62 +3,49 @@
 
 using namespace std;
 
-bool isInteger(string str)
+bool isInteger(string x)
 {
-    bool isStarting = false;
-
-    int size = str.size();
-
-    if (size >= 1)
+    bool mark = true;
+    if ((tolower(x[0]) < 'i') or (tolower(x[0]) > 'n'))
     {
-        if ((str[0] >= 'i' && str[0] <= 'n') || (str[0] >= 'I' && str[0] <= 'N'))
+        mark = false;
+    }
+    for (int i = 1; x[i]; i++)
+    {
+        if (tolower(x[0]) >= 'a' and tolower(x[0]) <= 'z')
         {
-            isStarting = true;
+            continue;
+        }
+        else if (x[0] >= '0' and x[0] <= '9')
+        {
+            continue;
+        }
+        else 
+        {
+            mark = false;
+            break;
         }
     }
-    
-    bool others = true;
-    for (int i = 1; i < str.size(); i++)
+    return mark;
+}
+
+bool isInt(string x)
+{
+    bool mark = true;
+    for (int i = 0; x[i]; i++)
     {
-        if (!isalpha(str[i]) && !isdigit(str[i]))
+        if (isdigit(x[i]))
+        
+         continue;
+        else
         {
-            others = false;
+            mark = false;
             break;
         }
     }
 
-    if (isStarting && others)
-        return true;
-    else
-        return false;
+    return mark;
 }
-
-bool isShortInt(string str)
-{
-    int size = str.size();
-
-    if (str.size() > 4)
-        return false;
-
-    bool isValidShortInt = true;
-
-    if (str[0] == '0')
-        isValidShortInt = false;
-
-    for (int i = 1; i < str.size(); i++)
-    {
-        if (!isdigit(str[i]))
-        {
-            isValidShortInt = false;
-            break;
-        }
-    }
-    if (isValidShortInt)
-        return true;
-    else
-        return false;
-}
-
 
 
 bool isLongInt(string str)
@@ -281,7 +268,7 @@ int main()
         {
             cout << "Integer Variable" << endl;
         }
-        else if (isShortInt(s))
+        else if (s.size() <= 4 and isInt(s))
         {
             cout << "Short Integer Number" << endl;
         }
